@@ -16,6 +16,8 @@ Used to get the latest status of the payment.
 | :--- | :---: |
 | The action of this call, must be hardcoded to “requery” | requery |
 
+---
+
 * **timestamp** `required` : **timestamp**
 
 | **Remark** | **Sample** |
