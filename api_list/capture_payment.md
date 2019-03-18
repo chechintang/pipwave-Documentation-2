@@ -1,4 +1,4 @@
-## Capture Payment {#capture-payment}
+# Capture Payment
 
 Used to capture credit card payment eg. Adyen if merchant opt for manual capture in payment settings. The capture API will only fired if the transaction is still under AUTHORISATION status.
 
@@ -6,88 +6,93 @@ Used to capture credit card payment eg. Adyen if merchant opt for manual capture
 
 **Action**: capture-payment
 
-### Request {#request} 
+## Request <a id="request"></a>
 
 **Format**: POST data
 
 * **action**
-`required` : &nbsp;**string (32)** 	
 
-|  **Remark** | **Sample** |
-| --- | :---: |
+  `required` :  **string \(32\)**     
+
+| **Remark** | **Sample** |
+| :--- | :---: |
 | The action of this call, must be hardcoded to “capture-payment” | capture-payment |
-    
-------------------------------------------------------------------
 
 * **timestamp**
-`required` : &nbsp;**timestamp** 	
+
+  `required` :  **timestamp**     
 
 | **Remark** | **Sample** |
-| --- | :---: |
+| :--- | :---: |
 | The timestamp for this API call | - |
 
-------------------------------------------------------------------
+* **api\_key** 
 
-* **api_key** 
-`required` : &nbsp;**string (32)**
-    
+  `required` :  **string \(32\)**
+
 | **Remark** | **Sample** |
-| --- | :---: |
+| :--- | :---: |
 | Pipwave-assigned merchant’s API key | 123456 |
- 
-------------------------------------------------------------------
-* **pw_id**
-`required` : &nbsp;**string (32)**
+
+* **pw\_id**
+
+  `required` :  **string \(32\)**
 
 | **Remark** | **Sample** |
-| --- | :---: |
-| Pipwave’s transaction reference ID, either this or txn_id must be sent | 123456 |
- 
-------------------------------------------------------------------
-* **txn_id** : &nbsp;**string (255)**
+| :--- | :---: |
+| Pipwave’s transaction reference ID, either this or txn\_id must be sent | 123456 |
+
+* **txn\_id** :  **string \(255\)**
 
 | **Remark** | **Sample** |
-| --- | :---: |
-| Merchant’s transaction ID, either this or pw_id must be sent | 123456 |
+| :--- | :---: |
+| Merchant’s transaction ID, either this or pw\_id must be sent | 123456 |
 
+* **capture\_amount** :  **decimal \(11, 2\)**
 
-
-------------------------------------------------------------------
-* **capture_amount** : &nbsp;**decimal (11, 2)**
-
-| **Remark** | **Sample** |
-| --- | :---: |
-| <ul><li>If not provided, full authorised amount will be captured.</li><li>If PG not supporting partial capture, full capture will be done. </li></ul>| - | 
-
-------------------------------------------------------------------
- 
-### Response {#response}
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left"><b>Remark</b>
+      </th>
+      <th style="text-align:center"><b>Sample</b>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">
+        <p>If not provided, full authorised amount will be captured.</p>
+        <p>If PG not supporting partial capture, full capture will be done.</p>
+      </td>
+      <td style="text-align:center">-</td>
+    </tr>
+  </tbody>
+</table>## Response <a id="response"></a>
 
 **Format**: JSON
 
-* **status** : &nbsp;**string (5)**
+* **status** :  **string \(5\)**
 
 | **Remark** | **Sample** |
-| --- | :---: |
+| :--- | :---: |
 | Status of the request. Refer to appendix for list of possible values | 0 |
 
-------------------------------------------------------------------
-
-* **message** : &nbsp;**string (255)**
+* **message** :  **string \(255\)**
 
 | **Remark** | **Sample** |
-| --- | :---: |
+| :--- | :---: |
 | Error message, if any | - |
 
-
-### Signature {#signature}
+## Signature <a id="signature"></a>
 
 The data involved in generating the signature for this API are:
 
-*   timestamp
-*   action
-*   api_key
-*   pw_id
-*   txn_id, if provided
-*   capture_amount, if provided
-*   api_secret
+* timestamp
+* action
+* api\_key
+* pw\_id
+* txn\_id, if provided
+* capture\_amount, if provided
+* api\_secret
+

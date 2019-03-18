@@ -1,9 +1,9 @@
-## Payment Data Code {#payment-data-code}
+# Payment Data Code
 
-### CVV codes {#cvv-codes}
+## CVV codes <a id="cvv-codes"></a>
 
 | Status | Description |
-| --- | --- |
+| :--- | :--- |
 | M | Match |
 | N | Not match |
 | P | Not processed |
@@ -11,10 +11,10 @@
 | U | Issuer unable to process |
 | Y | Not provided |
 
-### AVS codes {#avs-codes}
+## AVS codes <a id="avs-codes"></a>
 
 | Status | Description |
-| --- | --- |
+| :--- | :--- |
 | Y | Address and ZIP match |
 | A | Address match, ZIP not match |
 | S | Not supported |
@@ -34,10 +34,11 @@
 | F | VISA address and ZIP match, UK |
 | T | DISCOVER address not match, ZIP match |
 
-### 3D Secure codes {#threeds-codes}
+## 3D Secure codes <a id="threeds-codes"></a>
 
 | Status | Description |
-| --- | --- |
+| :--- | :--- |
 | 10 | Successfully authenticated |
 | 0 | Authentication failed |
 | 5 | Buyer / bank not enrolled to 3D Secure |
+

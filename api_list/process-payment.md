@@ -1,4 +1,4 @@
-## Process Payment {#tag-chargeback-payment}
+# Process Payment
 
 Used to manually move a payment that is currently in pending or cancelled state to processing state.
 
@@ -6,90 +6,79 @@ Used to manually move a payment that is currently in pending or cancelled state 
 
 **Action**: process-payment
 
-### Request {#request}
+## Request <a id="request"></a>
 
 **Format**: POST data
 
 * **action**
+
   `required` :  **string \(32\)**     
 
 | **Remark** | **Sample** |
-| --- | :---: |
+| :--- | :---: |
 | The action of this call, must be hardcoded to “process-payment” | process-payment |
 
----
-
 * **timestamp**
+
   `required` :  **timestamp**     
 
 | **Remark** | **Sample** |
-| --- | :---: |
+| :--- | :---: |
 | The timestamp for this API call | - |
 
----
-
 * **api\_key** 
+
   `required` :  **string \(32\)**
 
 | **Remark** | **Sample** |
-| --- | :---: |
+| :--- | :---: |
 | Pipwave-assigned merchant’s API key | 123456 |
 
----
-
 * **pw\_id**
+
   `*required` :  **string \(32\)**
 
 | **Remark** | **Sample** |
-| --- | :---: |
+| :--- | :---: |
 | pipwave’s transaction reference ID, either this or txn\_id must be sent | 123456 |
 
----
-
 * **txn\_id** 
+
   `*required`:  **string \(255\)**
 
 | **Remark** | **Sample** |
-| --- | :---: |
+| :--- | :---: |
 | Merchant’s transaction ID, either this or pw\_id must be sent | 123456 |
-
----
 
 * **reason** :   **string \(32\)**
 
 | **Remark** | **Sample** |
-| --- | :---: |
+| :--- | :---: |
 | The reason for the state change, non-mandatory | Buyer cancelled |
-
----
 
 * **ref\_tag** :   **string \(32\)**
 
 | **Remark** | **Sample** |
-| --- | :---: |
+| :--- | :---: |
 | The reference of the payment | A12131415 |
 
----
-
-### Response {#response}
+## Response <a id="response"></a>
 
 **Format**: JSON
 
 * **status** :  **string \(5\)**
 
 | **Remark** | **Sample** |
-| --- | :---: |
+| :--- | :---: |
 | Status of the request. Refer to appendix for list of possible values | 0 |
-
----
 
 * **message** :  **string \(255\)**
 
 | **Remark** | **Sample** |
-| --- | :---: |
+| :--- | :---: |
 | Error message, if any | - |
 
-### Signature {#signature}
+## Signature <a id="signature"></a>
 
 The data involved in generating the signature for this API are:
 
@@ -101,6 +90,4 @@ The data involved in generating the signature for this API are:
 * reason, if provided
 * ref\_tag, if provided
 * api\_secret
-
-
 

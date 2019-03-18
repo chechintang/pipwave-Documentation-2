@@ -1,7 +1,7 @@
-## API Status Code {#api-status-code}
+# API Status Code
 
 | API Code | Reason |
-| --- | --- |
+| :--- | :--- |
 | 200 | OK |
 | 400 | Failed to fulfill request, see message |
 | 401 | Invalid API signature |
@@ -21,6 +21,4 @@
 | 4006 | The transaction already has a reversal in process. You must wait for the process to complete first. |
 | 4501 | No disputed chargeback transaction to reversed |
 | 9001 | Parameter error, see message |
-
-
 

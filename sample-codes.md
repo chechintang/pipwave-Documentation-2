@@ -1,4 +1,4 @@
-# Sample codes
+# Sample Codes
 
 Following is sample minimal initiate-payment and submit-payment direct API.
 
@@ -148,6 +148,4 @@ if ($method == 'direct' && !empty($pm)) {
 </body>
 </html>
 ```
-
-
 
