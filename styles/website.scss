@@ -1,0 +1,23 @@
+@import "plugin/gitbook-plugin-theme-gestalt/src/scss/_variables.scss";
+
+
+// Put your variable overrides here
+$book-background: white;
+$page-background: white;
+$sidebar-background: #5F2580;
+$sidebar-logo-map: (
+    background: #5F2580,
+    border-bottom: 1px solid $color-border
+);
+$sidebar-logo-height:55px;
+$color-border: $color-gray-lighter;
+
+$color-primary: black;
+
+$heading-map : ( 
+                color: $color-primary, 
+                border-bottom: 1px solid $color-primary,
+                font-family: $font-family-sans
+                );
+
+@import "plugin/gitbook-plugin-theme-gestalt/src/scss/_all.scss";

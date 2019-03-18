@@ -1,0 +1,13 @@
+{
+	"pluginsConfig": {
+		"theme-gestalt": {
+			"logo": "../assets/logo.png",
+			"doNotHideChildrenChapters" : false,
+			"excludeDefaultStyles": true	
+		}
+	},
+	"plugins": ["search","theme-gestalt", "-theme-default", "styles-sass-fix"],
+	"styles": {
+		"website": "./styles/website.scss"
+	}
+}

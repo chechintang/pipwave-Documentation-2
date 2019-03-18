@@ -1,0 +1,2 @@
+/* CSS for website */
+.summary > li:first-child, .summary > li:first-child + .divider{display:none;}
